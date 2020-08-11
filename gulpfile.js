@@ -3,7 +3,7 @@ const htmlmin = require('gulp-htmlmin')
 const uglify = require('gulp-uglify')
 const cleanCss = require('gulp-clean-css')
 const imagemin = require('gulp-imagemin')
-const config = require('./bundler.config')
+const { output } = require('./scripts/getConfigs')()
 
 // 压缩html文件
 gulp.task('minifyHtml', () => {
@@ -19,9 +19,9 @@ gulp.task('minifyHtml', () => {
     removeScriptTypeAttributes: true,
     removeStyleLinkTypeAttributes: true
   }
-  return gulp.src(`${config.output}/**/*.html`)
+  return gulp.src(`${output}/**/*.html`)
   .pipe(htmlmin(minifyOptions))
-  .pipe(gulp.dest(config.output))
+  .pipe(gulp.dest(output))
 })
 
 // 压缩js文件
@@ -30,23 +30,23 @@ gulp.task('minifyJs', () => {
     mangle: true,
     compress: true
   }
-  return gulp.src(`${config.output}/**/*.js`)
+  return gulp.src(`${output}/**/*.js`)
   .pipe(uglify(minifyOptions))
-  .pipe(gulp.dest(config.output))
+  .pipe(gulp.dest(output))
 })
 
 // 压缩css文件
 gulp.task('minifyCss', () => {
-  return gulp.src(`${config.output}/**/*.css`)
+  return gulp.src(`${output}/**/*.css`)
   .pipe(cleanCss({rebase: false}))
-  .pipe(gulp.dest(config.output))
+  .pipe(gulp.dest(output))
 })
 
 // 压缩图片
 gulp.task('minifyImage', () => {
-  return gulp.src(`${config.output}/**/*.png`)
+  return gulp.src(`${output}/**/*.png`)
   .pipe(imagemin())
-  .pipe(gulp.dest(config.output))
+  .pipe(gulp.dest(output))
 })
 
 

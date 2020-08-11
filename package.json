@@ -1,13 +1,13 @@
 {
-  "name": "ajax",
+  "name": "cross-domain",
   "version": "1.0.0",
   "description": "跨域全面讲解",
   "author": "codepan",
   "license": "MIT",
   "scripts": {
-    "dev": "gitbook serve",
-    "build": "node build.js",
-    "deploy": "node deploy.js"
+    "dev": "node scripts/dev.js",
+    "build": "node scripts/build.js",
+    "deploy": "node scripts/deploy.js"
   },
   "dependencies": {
     "chalk": "^2.4.2",
