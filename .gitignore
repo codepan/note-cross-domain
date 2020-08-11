@@ -2,6 +2,4 @@
 node_modules/
 npm-debug.log
 .idea/
-_book/
-cross-domain
-bundler.config.js
+dist/
