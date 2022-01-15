@@ -19,6 +19,6 @@
     "gulp-imagemin": "^6.0.0",
     "gulp-uglify": "^3.0.2",
     "inquirer": "^6.4.1",
-    "shelljs": "^0.8.3"
+    "shelljs": "^0.8.5"
   }
 }
